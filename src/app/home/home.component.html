@@ -1,0 +1,129 @@
+<div class="nav">
+  <img height="60" width="180" src="../../assets/icono-blanco.png" />
+</div>
+<div class="bg-white container-home">
+  <h3 class="font-center">Capturar Propuesta</h3>
+  <div class="bg-grey container-content-home">
+    <div class="flex-row flex-between">
+      <div>
+        Cod MDI: <span>var</span> <br />
+        Código Único: <span>var</span> <br />
+        Razón Social: <span>var</span> <br />
+      </div>
+      <div>
+        RUC: <span>var</span>
+      </div>
+      <div>
+        Fecha Solicitud: <span>var</span> <br />
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="container-content-home">
+    <mat-tab-group mat-align-tabs="start">
+      <mat-tab label="Datos Cliente">
+        <!-- <mat-stepper #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+            <form [formGroup]="secondFormGroup">
+              <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                       required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+            </div>
+          </mat-step>
+        </mat-stepper> -->
+<div class="bg-grey">
+  <form class="example-form">
+    <div class="grid">
+      <div class="full-width p-x-5">
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Código Único:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>R.U.C:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Sector Económico Interno</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Rating:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+      </div>
+      <div class="full-width">
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Nro. de propuesta:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Razón Social:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Ejecutivo de Negocios:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Fecha de Actualización Rating:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width bg-white" appearance="outline">
+          <mat-label>Fecha de Evaluación Rating:</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+      </div>
+      <div>
+        <h4>Importante</h4>
+        <br />
+        <div class="bg-white">
+          Texto var
+        </div>
+      </div>
+    </div>
+    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+  </form>
+</div>
+
+      </mat-tab>
+      <mat-tab label="Estados Financieros">Estados Financieros</mat-tab>
+      <mat-tab label="Posición">Posición</mat-tab>
+      <mat-tab label="Garantías">Garantías</mat-tab>
+      <mat-tab label="Riesgo máximo">Riesgo máximo</mat-tab>
+    </mat-tab-group>
+  </div>
+
+</div>

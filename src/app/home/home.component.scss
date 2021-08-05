@@ -1,0 +1,91 @@
+.nav{
+  width: 100vw;
+  height: 60px;
+  background-color: #009c2d;
+  display: flex
+}
+
+.bg-grey{
+  background-color: #e9e9e9;
+}
+
+.bg-white{
+  background-color: #ffffff;
+}
+
+.container-home{
+  padding: 30px;
+}
+
+
+.container-content-home{
+  padding: 15px;
+  margin: auto;
+  color: #000
+}
+
+:host::ng-deep.mat-tab-label{
+  color: #fff !important;
+  background-color: #009c2d;
+  border-radius: 30px
+}
+
+
+// importar de app
+
+
+.flex {
+  display: flex;
+}
+// .flex-column{
+//   display: flex;
+//   flex-direction: column;
+// }
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-around{
+  display: flex;
+  justify-content: space-around;
+}
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+h3{
+  color: #009c2d;
+  font-size: 32px
+}
+
+.font-center{
+  text-align: center;
+}
+
+:host::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline{
+  color: black !important
+}
+
+:host::ng-deep mat-label{
+  color: black !important
+}
+
+.full-width{
+  width: 100%;
+}
+
+.p-x-5{
+  padding: 0 5px;
+}
+
+:host::ng-deep .mat-form-field-wrapper{
+  padding-bottom: 0;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+  grid-column-gap: 15px;
+  overflow: hidden;
+}
