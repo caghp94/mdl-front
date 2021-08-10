@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth-service.service';
 
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   public loginInvalid = false;
   private formSubmitAttempt = false;
   private returnUrl: string;
-
+  email = new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(6), Validators.pattern("[a-zA-Z0-9]*")]);
+  password = new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(6), Validators.pattern("[a-zA-Z0-9]*")]);
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -34,7 +35,17 @@ export class LoginComponent implements OnInit {
       await this.router.navigate([this.returnUrl]);
     }
   }
+  getPassErrorMessage() {
+    if (this.password.hasError('required')) {
+      return 'Campo requerido'
+    } else if (this.password.hasError('pattern') || this.password.hasError('minlength') || this.password.hasError('maxlength')) { return 'No es una contraseña válida' } else return ''
+  }
+  getUserErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'Campo requerido'
+    } else if (this.email.hasError('pattern') || this.email.hasError('minlength') || this.email.hasError('maxlength')) { return 'No es un usuario válido' } else return ''
 
+  }
   async onSubmit(): Promise<void> {
     this.router.navigate(['home'])
     // this.loginInvalid = false;

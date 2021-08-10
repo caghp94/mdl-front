@@ -26,12 +26,13 @@
         <mat-card-content>
           <mat-form-field appearance="outline" color="secondary">
             <mat-label>Usuario</mat-label>
-            <input matInput autocomplete="off"/>
+            <input matInput autocomplete="off" [formControl]="email" required />
+            <mat-error *ngIf="email.invalid">{{getUserErrorMessage()}}</mat-error>
           </mat-form-field>
           <br />
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off"/>
+            <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" [formControl]="password" required/>
             <button
               mat-icon-button
               matSuffix
@@ -41,6 +42,7 @@
             >
               <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
             </button>
+            <mat-error *ngIf="password.invalid">{{getPassErrorMessage()}}</mat-error>
           </mat-form-field>
         </mat-card-content>
         <button class="btn-block" (click)="onSubmit()" >INGRESAR</button>
