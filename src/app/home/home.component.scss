@@ -92,151 +92,145 @@
 
 // importar de app
 
-::ng-deep .flex {
+
+.flex {
   display: flex;
 }
-::ng-deep .flex-column {
+.flex-column{
   display: flex;
   flex-direction: column;
 }
-::ng-deep .flex-row {
+.flex-row{
   display: flex;
   flex-direction: row;
 }
-::ng-deep .flex-around {
+.flex-around{
   display: flex;
   justify-content: space-around;
 }
-::ng-deep .flex-between {
+.flex-between{
   display: flex;
   justify-content: space-between;
 }
 
-::ng-deep h3 {
-  color: #02bd4b;
-  font-size: 32px;
+h3{
+  color: #02BD4B;
+  font-size: 32px
 }
 
-::ng-deep .font-center {
+.font-center{
   text-align: center;
 }
 
-:host::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
-  color: black !important;
+:host::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline{
+  color: black !important
 }
 
-:host::ng-deep mat-label {
-  color: black !important;
+:host::ng-deep mat-label{
+  color: black !important
 }
 
-::ng-deep .full-width {
+.full-width{
   width: 100%;
 }
 
-::ng-deep .p-x-5 {
+.p-x-5{
   padding: 0 5px;
 }
 
-:host::ng-deep .mat-form-field-wrapper {
+:host::ng-deep .mat-form-field-wrapper{
   padding-bottom: 0;
 }
 
-::ng-deep .grid {
+.grid{
   display: grid;
   grid-template-columns: 40% 40% 20%;
   grid-column-gap: 15px;
   overflow: hidden;
 }
 
-::ng-deep .white {
-  color: #fff;
+.white{
+  color: #fff
 }
 
-::ng-deep .line {
-  border: 1px solid #fff;
+.line{
+  border: 1px solid #fff
 }
 
-:host::ng-deep .mat-tab-label-active {
-  background-color: #f0f0f0 !important;
+:host::ng-deep .mat-tab-label-active{
+  background-color: #F0F0F0 !important;
   color: #000 !important;
-  border-radius: 0 !important;
+  border-radius: 0 !important
 }
 
-:host::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
-.mat-tab-nav-bar.mat-primary .mat-ink-bar {
-  background-color: #02bd4b;
-}
-
-:host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
-  bottom: 0.25em !important;
+:host::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+  background-color: #02BD4B
 }
 
 :host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: .25em !important
+}
+
+:host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
   background-color: #000 !important;
 }
 
-:host::ng-deep.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+:host::ng-deep.mat-form-field-appearance-legacy .mat-form-field-wrapper{
   width: 90%;
   margin: auto;
-  padding: 10px 0;
+  padding: 10px 0
 }
 
-mat-label {
-  color: #02bd4b !important;
+mat-label{
+  color: #02BD4B !important
 }
 
-::ng-deep .mb-20 {
-  margin-bottom: 20px;
+.mb-20{
+  margin-bottom: 20px
 }
 
-::ng-deep .nav.profile {
+.nav.profile{
   display: flex;
 }
 
-::ng-deep .button {
-  background-color: #02bd4b;
+.button{
+  background-color: #02BD4B;
   border-radius: 30px;
   padding: 5px 10px;
   color: #fff;
   margin: auto;
   border: none;
-  cursor: pointer;
+  cursor: pointer
 }
 
-::ng-deep a {
-  color: #00a8ec;
+a{
+  color: #00A8EC
 }
 
-::ng-deep p {
-  margin: 0 !important;
+p{
+  margin: 0 !important
 }
 
-::ng-deep .pr-10 {
+.pr-10{
   padding-right: 10px;
 }
 
-::ng-deep .m-auto {
-  margin: auto;
+.m-auto{
+  margin: auto
 }
-::ng-deep .mat-stepper-horizontal,
-::ng-deep .mat-stepper-vertical {
-  background-color: #f0f0f0;
-}
-
-:host::ng-deep.mat-step-header .mat-step-icon-selected,
-.mat-step-header .mat-step-icon-state-done,
-.mat-step-header .mat-step-icon-state-edit,
-:host::ng-deep.mat-step-header .mat-step-icon-selected,
-.mat-step-header .mat-step-icon-state-done,
-.mat-step-header .mat-step-icon-state-edit {
-  background-color: grey !important;
+.mat-stepper-horizontal, .mat-stepper-vertical{
+  background-color: #F0F0F0
 }
 
-::ng-deep .custom-modalbox {
+:host::ng-deep.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit, :host::ng-deep.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+  background-color: grey !important
+}
+
+.custom-modalbox {
   mat-dialog-container {
-      background: #fff !important;
+    background: #fff !important;
   }
 }
-::ng-deep.mat-step-header .mat-step-icon-state-edit {
-  background-color: grey;
+::ng-deep.mat-step-header .mat-step-icon-state-edit{
+  background-color: grey
 }
