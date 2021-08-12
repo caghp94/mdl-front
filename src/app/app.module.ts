@@ -19,6 +19,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from "@angular/material/dialog";
+import { ExampleDialogModule } from './modals/search-client.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     HomeComponent
   ],
   imports: [
+    ExampleDialogModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -34,7 +38,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     FormsModule,
     MatIconModule,
     MatTabsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

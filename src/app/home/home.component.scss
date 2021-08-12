@@ -1,7 +1,6 @@
 .nav{
-  width: 100vw;
   height: 60px;
-  background-color: #009c2d;
+  background-color: #fff;
   display: flex
 }
 
@@ -13,11 +12,57 @@
   background-color: #ffffff;
 }
 
+.button-fast-action{
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  background-color: #00A8EC;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #fff;
+  text-align: left;
+  font-weight: 500;
+}
+
+.show-on-hover{
+  margin: auto;
+  display: none;
+}
+.hide-on-hover{
+  margin: auto;
+  display: block;
+}
+
+.button-fast-action:hover{
+  width: 70px;
+  height: auto  ;
+  .show-on-hover{
+    display: block;
+  }
+  .hide-on-hover{
+    display: none;
+  }
+  background-color: #02BD4B;
+}
+
+.container-fast-action{
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  align-items: flex-end;
+}
+
+.content-home{
+  padding: 15px;
+}
+
 .container-home{
-  padding: 15px 30px 30px 30px;
-  width: 90%;
-  height: 90%;
-  margin: auto
+  display: grid;
+  grid-template-columns: 70px calc(100vw - 130px);
+  padding: 20px 10px
 }
 
 .container{
@@ -36,7 +81,7 @@
 
 :host::ng-deep.mat-tab-label{
   color: #fff !important;
-  background-color: #009c2d;
+  background-color: #02BD4B;
   border-radius: 10px;
   margin-right: 10px;
   height: 36px !important;
@@ -69,7 +114,7 @@
 }
 
 h3{
-  color: #009c2d;
+  color: #02BD4B;
   font-size: 32px
 }
 
@@ -119,7 +164,7 @@ h3{
 }
 
 :host::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
-  background-color: #009c2d
+  background-color: #02BD4B
 }
 
 :host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
@@ -137,7 +182,7 @@ h3{
 }
 
 mat-label{
-  color: #009c2d !important
+  color: #02BD4B !important
 }
 
 .mb-20{
@@ -149,12 +194,30 @@ mat-label{
 }
 
 .button{
-  background-color: #009c2d;
+  background-color: #02BD4B;
   border-radius: 30px;
   padding: 5px 10px;
-  color: #fff
+  color: #fff;
+  margin: auto;
+  border: none;
+  cursor: pointer
 }
 
 a{
-  color: blue
+  color: #00A8EC
+}
+
+p{
+  margin: 0 !important
+}
+
+.pr-10{
+  padding-right: 10px;
+}
+
+.m-auto{
+  margin: auto
+}
+.mat-stepper-horizontal, .mat-stepper-vertical{
+  background-color: #F0F0F0
 }

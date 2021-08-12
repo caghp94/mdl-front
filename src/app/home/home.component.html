@@ -1,46 +1,206 @@
 <div class="nav flex-between">
-  <img height="60" width="180" src="../../assets/icono-blanco.png" />
+  <img height="60" width="180" src="../../assets/interbank-logo.svg" />
   <div class="flex">
-    <div class="flex-column">
+    <div class="flex-column pr-10 m-auto">
       <div>
         Nombre
       </div>
       <div>
-        <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Cerrar sesión</a>
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active">Cerrar sesión</a>
       </div>
     </div>
-    <div>
-      <img height="50" src="../../assets/user.svg"/>
+    <div class="pr-10 m-auto">
+      <img height="50" src="../../assets/user.svg" />
     </div>
   </div>
 </div>
-<div class="bg-grey container">
-<div class="bg-white container-home">
-  <h3 class="font-center">Capturar Propuesta</h3>
-  <div class="bg-grey p-10 b-radius-10">
-    <div>
-      <div class="flex-row flex-between">
-        <div>Cod MDI: var</div>
-        <div>Fecha Solicitud: var</div>
+<div class="bg-grey container-home">
+  <div class="container-fast-action">
+    <div class="button-fast-action" (click)="newProposal()">
+      <div class="show-on-hover">
+        <p>Nueva propuesta</p>
       </div>
-      <div>
-        <hr class="line white">
+      <div class="hide-on-hover">
+        <img height="18" src="../../assets/Plus-IBK.svg">
       </div>
-      <div class="flex-row flex-between">
-        <div><b>Código Único:</b> var</div>
-        <div><b>RUC:</b> var</div>
-        <div><b>Razón Social:</b> var</div>
+    </div>
+    <div class="button-fast-action">
+      <div class="show-on-hover">
+        <p>Propuestas pendientes</p>
       </div>
-      <div>
-
+      <div class="hide-on-hover">
+        <img height="18" src="../../assets/Plus-IBK.svg">
+      </div>
+    </div>
+    <div class="button-fast-action" (click)="searchProposal()">
+      <div class="show-on-hover">
+        <p>Búsqueda de propuestas</p>
+      </div>
+      <div class="hide-on-hover">
+        <img height="18" src="../../assets/Search-IBK.svg">
+      </div>
+    </div>
+    <div class="button-fast-action">
+      <div class="show-on-hover">
+        <p>Salir</p>
+      </div>
+      <div class="hide-on-hover">
+        <img height="18" src="../../assets/Plus-IBK.svg">
       </div>
     </div>
   </div>
-  <br />
   <div>
-    <mat-tab-group mat-align-tabs="start">
-      <mat-tab label="Datos Cliente">
-        <!-- <mat-stepper #stepper>
+    <div class="bg-white content-home" id="proposal">
+      <h3 class="font-center">Capturar Propuesta</h3>
+      <div class="bg-grey p-10 b-radius-10">
+        <div>
+          <div class="flex-row flex-between">
+            <div>Cod MDI: var</div>
+            <div>Fecha Solicitud: var</div>
+          </div>
+          <div>
+            <hr class="line white">
+          </div>
+          <div class="flex-row flex-between">
+            <div><b>Código Único:</b> var</div>
+            <div><b>RUC:</b> var</div>
+            <div><b>Razón Social:</b> var</div>
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+      <br />
+      <div>
+        <mat-tab-group mat-align-tabs="start">
+          <mat-tab label="Datos Cliente">
+            <mat-stepper #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+                <div class="bg-grey p-10 b-radius-10">
+                  <form class="example-form">
+                    <div class="grid">
+                      <div class="full-width p-x-5 bg-white">
+                        <div class="flex">
+                          <mat-form-field class="full-width bg-white">
+                            <mat-label>Código Único:</mat-label>
+                            <input matInput type="search" autocomplete="off" />
+                          </mat-form-field>
+                          <button class="button" (click)="openDialog()">
+                            <mat-icon matSuffix>search</mat-icon>
+                          </button>
+                        </div>
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>R.U.C:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Sector Económico Interno</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Rating:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                      <div class="full-width bg-white">
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Nro. de propuesta:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Razón Social:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Ejecutivo de Negocios:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Fecha de Actualización Rating:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white mb-20">
+                          <mat-label>Fecha de Evaluación Rating:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                      <div>
+                        <h4>Importante</h4>
+                        <br />
+                        <div class="bg-white">
+                          Texto var
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+                  </form>
+                </div>
+              </mat-step>
+              <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+            </mat-stepper>
+          </mat-tab>
+          <mat-tab label="Estados Financieros">Estados Financieros</mat-tab>
+          <mat-tab label="Posición">Posición</mat-tab>
+          <mat-tab label="Garantías">Garantías</mat-tab>
+          <mat-tab label="Riesgo máximo">Riesgo máximo</mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="flex-between">
+        <div class="flex-between">
+          <div class="button">
+            <img height="10" src="../../assets/floppy-disk.svg">
+          </div>
+          <div class="button">
+            <img height="10" src="../../assets/printer.svg">
+          </div>
+        </div>
+        <div class="flex-between">
+          <div class="button">.</div>
+          <div class="button">></div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white content-home" id="search">
+      <div>
+        <h3 class="font-center">Buscar propuesta</h3>
+        <div class="bg-grey p-10 b-radius-10">
+          <div>
+            <div class="flex-row flex-between">
+              <div>Cod MDI: var</div>
+              <div>Fecha Solicitud: var</div>
+            </div>
+            <div>
+              <hr class="line white">
+            </div>
+            <div class="flex-row flex-between">
+              <div><b>Código Único:</b> var</div>
+              <div><b>RUC:</b> var</div>
+              <div><b>Razón Social:</b> var</div>
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+        <br />
+        <div>
+          <mat-tab-group mat-align-tabs="start">
+            <mat-tab label="Datos Cliente">
+              <!-- <mat-stepper #stepper>
           <mat-step [stepControl]="firstFormGroup">
             <form [formGroup]="firstFormGroup">
               <ng-template matStepLabel>Fill out your name</ng-template>
@@ -74,88 +234,95 @@
             </div>
           </mat-step>
         </mat-stepper> -->
-        <div class="bg-grey p-10 b-radius-10">
-          <form class="example-form">
-            <div class="grid">
-              <div class="full-width p-x-5 bg-white">
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Código Único:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>R.U.C:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Sector Económico Interno</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Rating:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
+              <div class="bg-grey p-10 b-radius-10">
+                <form class="example-form">
+                  <div class="grid">
+                    <div class="full-width p-x-5 bg-white">
+                      <div class="flex">
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Código Único:</mat-label>
+                          <input matInput type="search" autocomplete="off" />
+                        </mat-form-field>
+                        <button mat-raised-button (click)="openDialog()">
+                          <mat-icon matSuffix>search</mat-icon>
+                        </button>
+                      </div>
+                      <br />
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>R.U.C:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                      <br />
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Sector Económico Interno</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                      <br />
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Rating:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                    </div>
+                    <div class="full-width bg-white">
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Nro. de propuesta:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                      <br />
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Razón Social:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                      <br />
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Ejecutivo de Negocios:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                      <br />
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Fecha de Actualización Rating:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                      <br />
+                      <mat-form-field class="full-width bg-white mb-20">
+                        <mat-label>Fecha de Evaluación Rating:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                    </div>
+                    <div>
+                      <h4>Importante</h4>
+                      <br />
+                      <div class="bg-white">
+                        Texto var
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+                </form>
               </div>
-              <div class="full-width bg-white">
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Nro. de propuesta:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Razón Social:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Ejecutivo de Negocios:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white">
-                  <mat-label>Fecha de Actualización Rating:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-                <br />
-                <mat-form-field class="full-width bg-white mb-20">
-                  <mat-label>Fecha de Evaluación Rating:</mat-label>
-                  <input matInput autocomplete="off" />
-                </mat-form-field>
-              </div>
-              <div>
-                <h4>Importante</h4>
-                <br />
-                <div class="bg-white">
-                  Texto var
-                </div>
-              </div>
-            </div>
-            <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
-          </form>
-        </div>
 
-      </mat-tab>
-      <mat-tab label="Estados Financieros">Estados Financieros</mat-tab>
-      <mat-tab label="Posición">Posición</mat-tab>
-      <mat-tab label="Garantías">Garantías</mat-tab>
-      <mat-tab label="Riesgo máximo">Riesgo máximo</mat-tab>
-    </mat-tab-group>
-  </div>
-  <div class="flex-between">
-    <div class="flex-between">
-      <div class="button">
-        <img height="10" src="../../assets/floppy-disk.svg">
-      </div>
-      <div class="button">
-        <img height="10" src="../../assets/printer.svg">
+            </mat-tab>
+            <mat-tab label="Estados Financieros">Estados Financieros</mat-tab>
+            <mat-tab label="Posición">Posición</mat-tab>
+            <mat-tab label="Garantías">Garantías</mat-tab>
+            <mat-tab label="Riesgo máximo">Riesgo máximo</mat-tab>
+          </mat-tab-group>
+        </div>
+        <div class="flex-between">
+          <div class="flex-between">
+            <div class="button">
+              <img height="10" src="../../assets/floppy-disk.svg">
+            </div>
+            <div class="button">
+              <img height="10" src="../../assets/printer.svg">
+            </div>
+          </div>
+          <div class="flex-between">
+            <div class="button">.</div>
+            <div class="button">></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex-between">
-      <div class="button"><</div>
-      <div class="button">></div>
-    </div>
+
   </div>
-</div>
-</div>
