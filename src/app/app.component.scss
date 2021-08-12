@@ -39,3 +39,7 @@
 ::ng-deep .mat-horizontal-stepper-header-container{
     max-width: 200px;
 }
+
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}

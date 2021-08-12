@@ -75,7 +75,7 @@
       <div>
         <mat-tab-group mat-align-tabs="start">
           <mat-tab label="Datos Cliente">
-            <mat-stepper #stepper [selectedIndex]="currentStep">
+            <mat-stepper #stepper [selectedIndex]="0">
               <mat-step [stepControl]="firstFormGroup">
                 <div class="bg-grey p-10 b-radius-10">
                   <form class="example-form">
@@ -169,10 +169,61 @@
             </mat-stepper>
           </mat-tab>
           <mat-tab label="Estados Financieros">
+            <mat-stepper #stepper [selectedIndex]="1">
+              <mat-step [stepControl]="firstFormGroup">
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+            </mat-stepper>
           </mat-tab>
-          <mat-tab label="Posición">Posición</mat-tab>
-          <mat-tab label="Garantías">Garantías</mat-tab>
-          <mat-tab label="Riesgo máximo">Riesgo máximo</mat-tab>
+          <mat-tab label="Posición">
+            <mat-stepper #stepper [selectedIndex]="2">
+              <mat-step [stepControl]="firstFormGroup">
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+            </mat-stepper>
+          </mat-tab>
+          <mat-tab label="Garantías">
+            <mat-stepper #stepper [selectedIndex]="3">
+              <mat-step [stepControl]="firstFormGroup">
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+            </mat-stepper>
+          </mat-tab>
+          <mat-tab label="Riesgo máximo">
+            <mat-stepper #stepper [selectedIndex]="4">
+              <mat-step [stepControl]="firstFormGroup">
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+              <mat-step>
+              </mat-step>
+            </mat-stepper>
+          </mat-tab>
         </mat-tab-group>
       </div>
 
