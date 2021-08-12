@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 ::ng-deep.mat-dialog-container {
-    background: #fff !important;
+    background: #f0f0f0 !important;
     color: black;
 }
 
@@ -14,9 +14,9 @@
     color: black !important;
 }
 
-::ng-deep .mat-form-field-wrapper {
-    padding-bottom: 0;
-}
+// ::ng-deep .mat-form-field-wrapper {
+//     padding-bottom: 0;
+// }
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
     bottom: 0.25em !important;
@@ -34,4 +34,8 @@
 
 ::ng-deep mat-label {
     color: #02BD4B !important;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container{
+    max-width: 200px;
 }

@@ -1,21 +1,23 @@
-<h1 mat-dialog-title>Búsqueda de clientes</h1>
-<div mat-dialog-content>
-  <mat-form-field class="full-width mb-20">
-    <mat-label>C.U:</mat-label>
-    <input matInput autocomplete="off" />
-  </mat-form-field>
-  <mat-form-field class="full-width mb-20">
-    <mat-label>RUC:</mat-label>
-    <input matInput autocomplete="off" />
-  </mat-form-field>
-  <mat-form-field class="full-width mb-20">
-    <mat-label>Razón Social:</mat-label>
-    <input matInput autocomplete="off" />
-  </mat-form-field>
+<div class="flex">
+    <h1 mat-dialog-title>Búsqueda de clientes
+    </h1>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cerrar</button>
+    </div>
 </div>
 
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cerrar</button>
-  <!-- <button mat-button [mat-dialog-close]="data.animal" 
-             cdkFocusInitial>Ok</button> -->
+<div mat-dialog-content>
+    <mat-form-field class="full-width mb-20">
+        <mat-label>C.U:</mat-label>
+        <input matInput autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field class="full-width mb-20">
+        <mat-label>RUC:</mat-label>
+        <input matInput autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field class="full-width mb-20">
+        <mat-label>Razón Social:</mat-label>
+        <input matInput autocomplete="off" />
+    </mat-form-field>
+    <button matButton class="button-search">Buscar</button>
 </div>
