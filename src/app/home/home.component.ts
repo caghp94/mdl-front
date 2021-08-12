@@ -42,7 +42,8 @@ export class HomeComponent implements OnInit {
   openDialog() {
     let dialogRef = this.dialog.open(ExampleDialogComponent, {
       width: '1000px',
-      data: { name: this.name, animal: this.animal }
+      data: { name: this.name, animal: this.animal },
+      panelClass: 'custom-modalbox'
     });
 
     dialogRef.afterClosed().subscribe(result => {

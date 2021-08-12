@@ -9,6 +9,7 @@ export interface PeriodicElement {
 @Component({
   selector: 'app-search-client',
   templateUrl: 'search-client.component.html',
+  styleUrls: ['./search-client.component.scss']
 })
 export class ExampleDialogComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
