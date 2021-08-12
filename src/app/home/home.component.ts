@@ -10,9 +10,8 @@ import { ExampleDialogComponent } from '../modals/search-client.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent implements OnInit {
-
+  currentStep: number = 0;
   isLinear = false;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;

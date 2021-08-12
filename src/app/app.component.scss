@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 ::ng-deep.mat-dialog-container {
-    background: #fff !important;
+    background: #f0f0f0 !important;
     color: black;
 }
 
@@ -33,5 +33,12 @@
 }
 
 ::ng-deep mat-label {
-    color: #02BD4B !important;
+    color: #02bd4b !important;
 }
+
+::ng-deep .mat-horizontal-stepper-header-container {
+    max-width: 200px;
+}
+
+// importado
+

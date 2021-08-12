@@ -75,7 +75,7 @@
       <div>
         <mat-tab-group mat-align-tabs="start">
           <mat-tab label="Datos Cliente">
-            <mat-stepper #stepper>
+            <mat-stepper #stepper [selectedIndex]="currentStep">
               <mat-step [stepControl]="firstFormGroup">
                 <div class="bg-grey p-10 b-radius-10">
                   <form class="example-form">
@@ -153,7 +153,7 @@
                   </div>
                   <div class="flex-between">
                     <button class="button next" mat-button matStepperNext>
-                      >
+                      <img height="10" src="../../assets/right-arrow.svg">
                     </button>
                   </div>
                 </div>
