@@ -39,3 +39,11 @@
 ::ng-deep .mat-horizontal-stepper-header-container{
     max-width: 200px;
 }
+
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}
+
+::ng-deep   .mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: #000 !important;
+  }
