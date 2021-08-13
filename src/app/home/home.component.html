@@ -24,7 +24,7 @@
         <img height="18" src="../../assets/Plus-IBK.svg">
       </div>
     </div>
-    <div class="button-fast-action">
+    <div class="button-fast-action" (click)="pendingProposals()">
       <div class="show-on-hover">
         <p>Propuestas pendientes</p>
       </div>
@@ -73,7 +73,7 @@
       </div>
       <br />
       <div>
-        <mat-tab-group mat-align-tabs="start">
+        <mat-tab-group mat-align-tabs="start" [selectedIndex]="currentTab">
           <mat-tab label="Datos Cliente">
             <mat-stepper #stepper [selectedIndex]="0">
               <mat-step [stepControl]="firstFormGroup">
@@ -152,7 +152,7 @@
                     </div>
                   </div>
                   <div class="flex-between">
-                    <button class="button next" mat-button matStepperNext>
+                    <button class="button next" (click)="nextTab(1)">
                       <img height="10" src="../../assets/right-arrow.svg">
                     </button>
                   </div>
@@ -170,9 +170,117 @@
           </mat-tab>
           <mat-tab label="Estados Financieros">
             <mat-stepper #stepper [selectedIndex]="1">
-              <mat-step [stepControl]="firstFormGroup">
+              <mat-step>
               </mat-step>
               <mat-step>
+                <div class="bg-grey p-10 b-radius-10">
+                  <form class="example-form">
+                    <div class="grid">
+                      <div class="full-width p-x-5 bg-white">
+                        <div class="flex">
+                          <mat-form-field class="full-width bg-white">
+                            <mat-label>Fecha del EEFF</mat-label>
+                            <input matInput autocomplete="off" />
+                          </mat-form-field>
+                        </div>
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Activo Corriente:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Patrimonio:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Ventas Netas:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>EBITDA:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Capital Trabajo:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Activo Total:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Tipo de EEFF:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                      <div class="full-width bg-white">
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Fecha de EEFF:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Activo Corriente:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Patrimonio:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Ventas Netas:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white mb-20">
+                          <mat-label>EBITDA:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Capital Trabajo:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Activo Total:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Tipo de EEFF:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+                  </form>
+                </div>
+                <div class="flex-between">
+                  <div class="flex-between">
+                    <div class="button">
+                      <img height="10" src="../../assets/floppy-disk.svg">
+                    </div>
+                    <div class="button">
+                      <img height="10" src="../../assets/printer.svg">
+                    </div>
+                  </div>
+                  <div class="flex-between">
+                    <button class="button next" (click)="previousTab(2)">
+                      <img height="10" src="../../assets/left-arrow.svg">
+                    </button>
+                    <button class="button next" (click)="nextTab(2)">
+                      <img height="10" src="../../assets/right-arrow.svg">
+                    </button>
+                  </div>
+                </div>
               </mat-step>
               <mat-step>
               </mat-step>
@@ -184,11 +292,64 @@
           </mat-tab>
           <mat-tab label="Posición">
             <mat-stepper #stepper [selectedIndex]="2">
-              <mat-step [stepControl]="firstFormGroup">
-              </mat-step>
               <mat-step>
               </mat-step>
               <mat-step>
+              </mat-step>
+              <mat-step>
+                <div class="bg-grey p-10 b-radius-10">
+                  <form class="example-form">
+                    <div class="grid">
+                      <div class="full-width p-x-5 bg-white">
+                        <div class="flex">
+                          <mat-form-field class="full-width bg-white">
+                            <mat-label>Fecha del EEFF</mat-label>
+                            <input matInput autocomplete="off" />
+                          </mat-form-field>
+                        </div>
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Activo Corriente:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Patrimonio:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Ventas Netas:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                      <div class="full-width bg-white">
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Fecha de EEFF:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+                  </form>
+                </div>
+                <div class="flex-between">
+                  <div class="flex-between">
+                    <div class="button">
+                      <img height="10" src="../../assets/floppy-disk.svg">
+                    </div>
+                    <div class="button">
+                      <img height="10" src="../../assets/printer.svg">
+                    </div>
+                  </div>
+                  <div class="flex-between">
+                    <button class="button next" (click)="previousTab(3)">
+                      <img height="10" src="../../assets/left-arrow.svg">
+                    </button>
+                    <button class="button next" (click)="nextTab(3)">
+                      <img height="10" src="../../assets/right-arrow.svg">
+                    </button>
+                  </div>
+                </div>
               </mat-step>
               <mat-step>
               </mat-step>
@@ -198,21 +359,63 @@
           </mat-tab>
           <mat-tab label="Garantías">
             <mat-stepper #stepper [selectedIndex]="3">
-              <mat-step [stepControl]="firstFormGroup">
-              </mat-step>
               <mat-step>
               </mat-step>
               <mat-step>
               </mat-step>
               <mat-step>
+              </mat-step>
+              <mat-step>
+                <div class="bg-grey p-10 b-radius-10">
+                  <form class="example-form">
+                    <div class="grid">
+                      <div class="full-width p-x-5 bg-white">
+                        <div class="flex">
+                          <mat-form-field class="full-width bg-white">
+                            <mat-label>Fecha del EEFF</mat-label>
+                            <input matInput autocomplete="off" />
+                          </mat-form-field>
+                        </div>
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Activo Corriente:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field class="full-width bg-white">
+                          <mat-label>Patrimonio:</mat-label>
+                          <input matInput autocomplete="off" />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+                  </form>
+                </div>
+                <div class="flex-between">
+                  <div class="flex-between">
+                    <div class="button">
+                      <img height="10" src="../../assets/floppy-disk.svg">
+                    </div>
+                    <div class="button">
+                      <img height="10" src="../../assets/printer.svg">
+                    </div>
+                  </div>
+                  <div class="flex-between">
+                    <button class="button next" (click)="previousTab(4)">
+                      <img height="10" src="../../assets/left-arrow.svg">
+                    </button>
+                    <button class="button next" (click)="nextTab(4)">
+                      <img height="10" src="../../assets/right-arrow.svg">
+                    </button>
+                  </div>
+                </div>
               </mat-step>
               <mat-step>
               </mat-step>
             </mat-stepper>
           </mat-tab>
-          <mat-tab label="Riesgo máximo">
+          <mat-tab label="Riesgo máximo" [disabled]='true'>
             <mat-stepper #stepper [selectedIndex]="4">
-              <mat-step [stepControl]="firstFormGroup">
+              <mat-step>
               </mat-step>
               <mat-step>
               </mat-step>
@@ -233,7 +436,30 @@
         <h3 class="font-center">Buscar propuesta</h3>
         <div class="bg-grey p-10 b-radius-10">
 
+          <mat-form-field class="full-width bg-white">
+            <mat-label>C.U.:</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="full-width bg-white">
+            <mat-label>RUC:</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="full-width bg-white">
+            <mat-label>Estado de propuesta:</mat-label>
+            <mat-select>
+              <mat-option>Seleccionar</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
-    </div>
 
-  </div>
+    </div>
+    <div class="bg-white content-home" id="pending">
+      <div>
+        <h3 class="font-center">Propuestas pendientes</h3>
+        <div class="bg-grey p-10 b-radius-10">
+
+        </div>
+      </div>
+
+    </div>
