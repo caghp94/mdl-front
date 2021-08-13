@@ -32,3 +32,20 @@
   border-radius: 30px;
   color: #fff
 }
+
+.flex{
+  display: flex;
+}
+
+.f-around{
+  justify-content: space-around;
+}
+.f-between{
+  justify-content: space-between;
+}
+
+::ng-deep{
+  .mat-dialog-title{
+    margin: 0 !important
+  }
+}
