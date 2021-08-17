@@ -15,6 +15,7 @@ spec:
       containers:
       - name: mdl-front
         image: acreu2c001mdldev01.azurecr.io/mdl-front:dev
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 
