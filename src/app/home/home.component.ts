@@ -58,6 +58,9 @@ export class HomeComponent implements OnInit {
       this.animal = result;
     });
   };
+  calculate(){
+
+  };
   nextTab(step: any){
     this.currentTab = step
   };

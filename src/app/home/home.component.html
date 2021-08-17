@@ -52,7 +52,7 @@
   <div>
     <div class="bg-white content-home" id="proposal">
       <h3 class="font-center">Capturar Propuesta</h3>
-      <div class="bg-grey p-10 b-radius-10">
+      <div class="bg-grey p-10 b-radius-4">
         <div>
           <div class="flex-row flex-between">
             <div>Cod MDI: var</div>
@@ -71,370 +71,459 @@
           </div>
         </div>
       </div>
-      <br />
       <div>
-        <mat-tab-group mat-align-tabs="start" [selectedIndex]="currentTab">
-          <mat-tab label="Datos Cliente">
-            <mat-stepper #stepper [selectedIndex]="0">
-              <mat-step [stepControl]="firstFormGroup">
-                <div class="bg-grey p-10 b-radius-10">
-                  <form class="example-form">
-                    <div class="grid">
-                      <div class="full-width p-x-5 bg-white">
-                        <div class="flex">
-                          <mat-form-field class="full-width bg-white">
-                            <mat-label>Código Único:</mat-label>
-                            <input matInput type="search" autocomplete="off" />
-                          </mat-form-field>
-                          <button class="button" (click)="openDialog()">
-                            <mat-icon matSuffix>search</mat-icon>
-                          </button>
-                        </div>
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>R.U.C:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Sector Económico Interno</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Rating:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
+        <mat-stepper #stepper [completed]="false">
+          <mat-step>
+            <ng-template matStepLabel>Datos del cliente</ng-template>
+            <div class="bg-grey p-10 b-radius-4">
+              <button class="button mb-10" (click)="openDialog()">
+                Buscar cliente
+                <img height="10" src="../../assets/search-client.svg">
+              </button>
+              <form class="example-form">
+                <div class="grid">
+                  <div class="full-width p-x-5 bg-white b-radius-4">
+                    <div class="flex">
+                      <mat-form-field class="full-width bg-white">
+                        <mat-label>Código Único:</mat-label>
+                        <input matInput autocomplete="off" />
+                      </mat-form-field>
+                    </div>
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>R.U.C:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>Sector Económico Interno</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>Rating:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                  </div>
+                  <div class="full-width bg-white b-radius-4">
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>Nro. de propuesta:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>Razón Social:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>Ejecutivo de Negocios:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="full-width bg-white">
+                      <mat-label>Fecha de Actualización Rating:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="full-width bg-white mb-20">
+                      <mat-label>Fecha de Evaluación Rating:</mat-label>
+                      <input matInput autocomplete="off" />
+                    </mat-form-field>
+                  </div>
+                  <div>
+                    <h4>Importante</h4>
+                    <br />
+                    <div class="bg-white">
+                      Texto var
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-between mt-10">
+                  <div class="flex-between">
+                    <div class="button">
+                      <img height="12" src="../../assets/floppy-disk.svg">
+                    </div>
+                    <div class="button ml-10">
+                      <img height="12" src="../../assets/printer.svg">
+                    </div>
+                  </div>
+                  <div class="flex-between">
+                    <button matStepperNext class="button">
+                      <img height="10" src="../../assets/right-arrow.svg">
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Estados financieros</ng-template>
+            <div class="bg-grey p-10 b-radius-4">
+              <form class="example-form">
+                <div class="grid-finantial-state">
+                  <div class="full-width bg-white p-10 b-radius-4">
+                    <h4 class="green fw-600 pl-15">Balance de Cierre en USD</h4>
+                    <div class="flex-between bg-grey tag-balance p-y-5 p-x-5 b-radius-4">
+                      <div class="flex">
+                        <span class="green">Tipo de EEFF: </span>
+                        <span>var</span>
                       </div>
-                      <div class="full-width bg-white">
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Nro. de propuesta:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Razón Social:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Ejecutivo de Negocios:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Fecha de Actualización Rating:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white mb-20">
-                          <mat-label>Fecha de Evaluación Rating:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
+                      <div class="flex">
+                        <span class="green">Fecha de EEFF: </span>
+                        <span>var</span>
                       </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Activo Corriente: </pre>
                       <div>
-                        <h4>Importante</h4>
-                        <br />
-                        <div class="bg-white">
-                          Texto var
-                        </div>
-                      </div>
-                    </div>
-                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
-                  </form>
-                </div>
-                <div class="flex-between">
-                  <div class="flex-between">
-                    <div class="button">
-                      <img height="10" src="../../assets/floppy-disk.svg">
-                    </div>
-                    <div class="button">
-                      <img height="10" src="../../assets/printer.svg">
-                    </div>
-                  </div>
-                  <div class="flex-between">
-                    <button class="button next" (click)="nextTab(1)">
-                      <img height="10" src="../../assets/right-arrow.svg">
-                    </button>
-                  </div>
-                </div>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-            </mat-stepper>
-          </mat-tab>
-          <mat-tab label="Estados Financieros">
-            <mat-stepper #stepper [selectedIndex]="1">
-              <mat-step>
-              </mat-step>
-              <mat-step>
-                <div class="bg-grey p-10 b-radius-10">
-                  <form class="example-form">
-                    <div class="grid">
-                      <div class="full-width p-x-5 bg-white">
-                        <div class="flex">
-                          <mat-form-field class="full-width bg-white">
-                            <mat-label>Fecha del EEFF</mat-label>
-                            <input matInput autocomplete="off" />
-                          </mat-form-field>
-                        </div>
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Activo Corriente:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Patrimonio:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Ventas Netas:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>EBITDA:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Capital Trabajo:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Activo Total:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Tipo de EEFF:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                      </div>
-                      <div class="full-width bg-white">
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Fecha de EEFF:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Activo Corriente:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Patrimonio:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Ventas Netas:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white mb-20">
-                          <mat-label>EBITDA:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Capital Trabajo:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Activo Total:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Tipo de EEFF:</mat-label>
-                          <input matInput autocomplete="off" />
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
                         </mat-form-field>
                       </div>
                     </div>
-                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
-                  </form>
-                </div>
-                <div class="flex-between">
-                  <div class="flex-between">
-                    <div class="button">
-                      <img height="10" src="../../assets/floppy-disk.svg">
-                    </div>
-                    <div class="button">
-                      <img height="10" src="../../assets/printer.svg">
-                    </div>
-                  </div>
-                  <div class="flex-between">
-                    <button class="button next" (click)="previousTab(2)">
-                      <img height="10" src="../../assets/left-arrow.svg">
-                    </button>
-                    <button class="button next" (click)="nextTab(2)">
-                      <img height="10" src="../../assets/right-arrow.svg">
-                    </button>
-                  </div>
-                </div>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-            </mat-stepper>
-          </mat-tab>
-          <mat-tab label="Posición">
-            <mat-stepper #stepper [selectedIndex]="2">
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-                <div class="bg-grey p-10 b-radius-10">
-                  <form class="example-form">
-                    <div class="grid">
-                      <div class="full-width p-x-5 bg-white">
-                        <div class="flex">
-                          <mat-form-field class="full-width bg-white">
-                            <mat-label>Fecha del EEFF</mat-label>
-                            <input matInput autocomplete="off" />
-                          </mat-form-field>
-                        </div>
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Activo Corriente:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Patrimonio:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Ventas Netas:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                      </div>
-                      <div class="full-width bg-white">
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Fecha de EEFF:</mat-label>
-                          <input matInput autocomplete="off" />
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Patrimonio: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
                         </mat-form-field>
                       </div>
                     </div>
-                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
-                  </form>
-                </div>
-                <div class="flex-between">
-                  <div class="flex-between">
-                    <div class="button">
-                      <img height="10" src="../../assets/floppy-disk.svg">
-                    </div>
-                    <div class="button">
-                      <img height="10" src="../../assets/printer.svg">
-                    </div>
-                  </div>
-                  <div class="flex-between">
-                    <button class="button next" (click)="previousTab(3)">
-                      <img height="10" src="../../assets/left-arrow.svg">
-                    </button>
-                    <button class="button next" (click)="nextTab(3)">
-                      <img height="10" src="../../assets/right-arrow.svg">
-                    </button>
-                  </div>
-                </div>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-            </mat-stepper>
-          </mat-tab>
-          <mat-tab label="Garantías">
-            <mat-stepper #stepper [selectedIndex]="3">
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-                <div class="bg-grey p-10 b-radius-10">
-                  <form class="example-form">
-                    <div class="grid">
-                      <div class="full-width p-x-5 bg-white">
-                        <div class="flex">
-                          <mat-form-field class="full-width bg-white">
-                            <mat-label>Fecha del EEFF</mat-label>
-                            <input matInput autocomplete="off" />
-                          </mat-form-field>
-                        </div>
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Activo Corriente:</mat-label>
-                          <input matInput autocomplete="off" />
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field class="full-width bg-white">
-                          <mat-label>Patrimonio:</mat-label>
-                          <input matInput autocomplete="off" />
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Ventas Netas: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
                         </mat-form-field>
                       </div>
                     </div>
-                    <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
-                  </form>
-                </div>
-                <div class="flex-between">
-                  <div class="flex-between">
-                    <div class="button">
-                      <img height="10" src="../../assets/floppy-disk.svg">
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;" class="green">EBITDA: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
                     </div>
-                    <div class="button">
-                      <img height="10" src="../../assets/printer.svg">
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Capital Trabajo: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Activo Total: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
                     </div>
                   </div>
-                  <div class="flex-between">
-                    <button class="button next" (click)="previousTab(4)">
-                      <img height="10" src="../../assets/left-arrow.svg">
-                    </button>
-                    <button class="button next" (click)="nextTab(4)">
-                      <img height="10" src="../../assets/right-arrow.svg">
-                    </button>
+                  <div class="full-width bg-white p-10 b-radius-4 ml-10">
+                    <h4 class="green fw-600 pl-15">Balance de Situación en USD</h4>
+                    <div class="flex-between bg-grey tag-balance p-y-5 p-x-5 b-radius-4">
+                      <div class="flex">
+                        <span class="green">Tipo de EEFF: </span>
+                        <span>var</span>
+                      </div>
+                      <div class="flex">
+                        <span class="green">Fecha de EEFF: </span>
+                        <span>var</span>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Activo Corriente: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Patrimonio: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Ventas Netas: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;" class="green">EBITDA: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Capital Trabajo: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Activo Total: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-            </mat-stepper>
-          </mat-tab>
-          <mat-tab label="Riesgo máximo" [disabled]='true'>
-            <mat-stepper #stepper [selectedIndex]="4">
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-              <mat-step>
-              </mat-step>
-            </mat-stepper>
-          </mat-tab>
-        </mat-tab-group>
+                <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+              </form>
+            </div>
+            <div class="flex-between mt-10">
+              <div class="flex-between">
+                <div class="button">
+                  <img height="12" src="../../assets/floppy-disk.svg">
+                </div>
+                <div class="button ml-10">
+                  <img height="12" src="../../assets/printer.svg">
+                </div>
+              </div>
+              <div class="flex-between">
+                <button matStepperPrevious class="button">
+                  <img height="10" src="../../assets/left-arrow.svg">
+                </button>
+                <button matStepperNext class="button ml-10">
+                  <img height="10" src="../../assets/right-arrow.svg">
+                </button>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Posición</ng-template>
+            <div class="bg-grey p-10 b-radius-4">
+              <form class="example-form">
+                <h4 class="green fw-600 pl-15">Posición Interna en IBK</h4>
+                <div class="grid-position">
+                  <div class="full-width p-10 b-radius-4">
+                    <div class="flex-field position">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">RM Líneas de Crédito: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field position">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">RM Op Puntuales: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field position">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">RM total: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field position">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">RM Utilizado en el Mediano Plazo: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field position">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Saldo Pasivo Promedio en el último año: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+              </form>
+            </div>
+            <div class="flex-between mt-10">
+              <div class="flex-between">
+                <div class="button">
+                  <img height="12" src="../../assets/floppy-disk.svg">
+                </div>
+                <div class="button ml-10">
+                  <img height="12" src="../../assets/printer.svg">
+                </div>
+              </div>
+              <div class="flex-between">
+                <button matStepperPrevious class="button">
+                  <img height="10" src="../../assets/left-arrow.svg">
+                </button>
+                <button matStepperNext class="button ml-10">
+                  <img height="10" src="../../assets/right-arrow.svg">
+                </button>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Garantías</ng-template>
+            <div class="bg-grey p-10 b-radius-4">
+              <form class="example-form">
+                <h4 class="green fw-600 pl-15">Posición Interna en IBK</h4>
+                <div class="grid-position">
+                  <div class="full-width p-10 b-radius-4">
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Garantía Existente: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Garantía Adicional: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-field">
+                      <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
+                        class="green">Garantía Total: </pre>
+                      <div>
+                        <mat-form-field>
+                          <input matInput autocomplete="off">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="flex-end mx-20">
+                      <button class="button mb-10" (click)="calculate()">
+                        Ejecutar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+              </form>
+            </div>
+            <div class="flex-between mt-10">
+              <div class="flex-between">
+                <div class="button">
+                  <img height="12" src="../../assets/floppy-disk.svg">
+                </div>
+                <div class="button ml-10">
+                  <img height="12" src="../../assets/printer.svg">
+                </div>
+              </div>
+              <div class="flex-between">
+                <button matStepperPrevious class="button">
+                  <img height="10" src="../../assets/left-arrow.svg">
+                </button>
+                <button matStepperNext class="button ml-10">
+                  <img height="10" src="../../assets/right-arrow.svg">
+                </button>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Riesgo máximo</ng-template>
+            <div class="bg-grey p-10 b-radius-4">
+              <h4 class="green fw-600 pl-15">Riesgo máximo calculados por el MDL</h4>
+              <p class="mx-20">Autonomía</p>
+              <form class="example-form">
+                <div class="grid-max-risk">
+                  <div class="bg-white p-10 b-radius-4 ml-10">
+                    <h4 class="green fw-600">Balance de Cierre en USD</h4>
+                    <label class="full-width mx-10">RM CP:</label>
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                    <label class="full-width mx-10">Garantía Existente:</label>
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                  </div>
+                  <div class="bg-white p-10 b-radius-4">
+                    <h4 class="green fw-600">Balance de Situación en USD</h4>
+                    <label class="full-width mx-10">RM CP:</label>
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                    <label class="full-width mx-10">Garantía Existente:</label>
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                    <label class="full-width mx-10">Garantía Adicional:</label>
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                  </div>
+                  <div class="bg-white p-10 b-radius-4">
+                    <h4 class="green fw-600">Balance de Situación en USD</h4>
+                    <label class="full-width mx-10">RM CP:</label>
+                    <br />
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                    <label class="full-width mx-10">Garantía Existente:</label>
+                    <br />
+                    <mat-form-field>
+                      <input matInput autocomplete="off">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
+              </form>
+            </div>
+            <div class="flex-between mt-10">
+              <div class="flex-between">
+                <div class="button">
+                  <img height="12" src="../../assets/floppy-disk.svg">
+                </div>
+                <div class="button ml-10">
+                  <img height="12" src="../../assets/printer.svg">
+                </div>
+              </div>
+            </div>
+          </mat-step>
+        </mat-stepper>
       </div>
 
     </div>
     <div class="bg-white content-home" id="search">
       <div>
         <h3 class="font-center">Buscar propuesta</h3>
-        <div class="bg-grey p-10 b-radius-10">
+        <div class="bg-grey p-10 b-radius-4">
 
           <mat-form-field class="full-width bg-white">
             <mat-label>C.U.:</mat-label>
@@ -457,7 +546,7 @@
     <div class="bg-white content-home" id="pending">
       <div>
         <h3 class="font-center">Propuestas pendientes</h3>
-        <div class="bg-grey p-10 b-radius-10">
+        <div class="bg-grey p-10 b-radius-4">
 
         </div>
       </div>
