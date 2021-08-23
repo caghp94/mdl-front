@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ export class AppComponent implements OnInit {
   title = 'Tic Tac Toe';
   isAuthenticated = false;
 
-  constructor(public authService: AuthService) {
+  constructor() {
   }
 
   async ngOnInit(): Promise<void> {
@@ -18,6 +17,6 @@ export class AppComponent implements OnInit {
   }
 
   async logout(): Promise<void> {
-    await this.authService.logout('/');
+    // await this.authService.logout('/');
   }
 }

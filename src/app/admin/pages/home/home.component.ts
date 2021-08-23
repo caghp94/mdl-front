@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { ExampleDialogComponent } from '../modals/search-client.component';
+// import { ExampleDialogComponent } from '../modals/search-client.component';
 
 
 @Component({
@@ -47,20 +47,7 @@ export class HomeComponent implements OnInit {
     (document.getElementById('search') as HTMLElement).style.display = 'none';
     (document.getElementById('pending') as HTMLElement).style.display = 'block'
   }
-  openDialog() {
-    let dialogRef = this.dialog.open(ExampleDialogComponent, {
-      width: '1000px',
-      data: { name: this.name, animal: this.animal },
-      panelClass: 'custom-modalbox'
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.animal = result;
-    });
-  };
-  calculate(){
-
-  };
   nextTab(step: any){
     this.currentTab = step
   };

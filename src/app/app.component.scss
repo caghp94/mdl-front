@@ -18,9 +18,6 @@
 //     padding-bottom: 0;
 // }
 
-::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
-    bottom: 0.25em !important;
-}
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
     background-color: #000 !important;
@@ -29,7 +26,6 @@
 ::ng-deep.mat-form-field-appearance-legacy .mat-form-field-wrapper {
     width: 90%;
     margin: auto;
-    padding: 10px 0;
 }
 
 ::ng-deep mat-label {
@@ -40,9 +36,14 @@
     background-color: #000 !important;
 }
 
-::ng-deep .mat-step-header .mat-step-icon-selected,::ng-deep  .mat-step-header .mat-step-icon-state-done,::ng-deep  .mat-step-header .mat-step-icon-state-edit,::ng-deep  .mat-step-header .mat-step-icon{
-    background-color: white !important;
+::ng-deep  .mat-step-header .mat-step-icon-state-done,::ng-deep  .mat-step-header .mat-step-icon-state-edit,::ng-deep  .mat-step-header .mat-step-icon{
+    background-color: #fff !important;
     color: #02bd4b !important;
+    border: 1px solid !important;
+}
+::ng-deep .mat-step-header .mat-step-icon-selected{
+    background-color: #02bd4b !important;
+    color: #fff !important;
     border: 1px solid !important;
 }
 
@@ -64,7 +65,7 @@
 }
 
 ::ng-deep .mat-h3, .mat-subheading-2, ::ng-deep .mat-typography h3, ::ng-deep .mat-h4, .mat-subheading-1, ::ng-deep .mat-typography h4{
-    margin: 0 0 5px !important;
+    margin: 0 !important;
     font-family: 'Poppins'
 }
 

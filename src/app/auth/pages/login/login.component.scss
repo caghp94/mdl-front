@@ -1,0 +1,43 @@
+:host::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+  }
+  
+  :host::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  
+  :host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    bottom: 0.25em !important;
+  }
+  
+  :host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: #000 !important;
+  }
+  
+  :host::ng-deep.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+  }
+  
+  :host::ng-deep.mat-dialog-container {
+    background: #fff !important;
+  }
+
+  
+  .flex{
+    display: flex;
+  }
+  
+  .f-around{
+    justify-content: space-around;
+  }
+  .f-between{
+    justify-content: space-between;
+  }
+  
+  ::ng-deep{
+    .mat-dialog-title{
+      margin: 0 !important
+    }
+  }
