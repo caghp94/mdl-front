@@ -433,7 +433,8 @@ th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:la
 .button-execute{
   width: 90%;
   margin-top: 10px !important;
-  margin-left: 18px
+  margin-left: 18px;
+  cursor: pointer
 }
 
 .button-search{
@@ -444,6 +445,7 @@ th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:la
   border-radius: 30px;
   color: #fff;
   height: 40px;
+  cursor: pointer;
 }
 
 .grid-risk{
