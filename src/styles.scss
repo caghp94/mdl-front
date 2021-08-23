@@ -34,7 +34,7 @@ body {
 }
 
 .mb-10 {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 .mt-10 {
@@ -50,7 +50,10 @@ body {
 }
 
 .ml-10 {
-  margin-left: 10px;
+  margin-left: 10px !important;
+}
+.ml-20 {
+  margin-left: 20px;
 }
 
 .fw-600 {
@@ -318,13 +321,16 @@ mat-label{
 }
 
 .button{
-  background-color: #02BD4B;
+  background-color: #02BD4B !important;
   border-radius: 30px;
-  padding: 5px 10px;
-  color: #fff;
+  width: 35px !important;
+  height: 35px !important;
+  color: #fff !important;
   border: none;
   cursor: pointer
 }
+
+.material-icons.md-18 { font-size: 18px; }
 
 a{
   color: #00A8EC
@@ -428,6 +434,16 @@ th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:la
   width: 90%;
   margin-top: 10px !important;
   margin-left: 18px
+}
+
+.button-search{
+  background-color: #02BD4B;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  height: 40px;
 }
 
 .grid-risk{

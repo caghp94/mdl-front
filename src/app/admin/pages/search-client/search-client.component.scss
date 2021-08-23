@@ -23,16 +23,20 @@
   :host::ng-deep.mat-dialog-container {
     background: #fff !important;
   }
-  
-  .button-search{
-    background-color: #02BD4B;
-    padding: 10px 40px;
-    outline: none;
-    border: none;
+  .button-search-client, .button-clean-client{
     border-radius: 30px;
-    color: #fff;
-    height: 40px;
-    margin: auto;
+    border: 1px solid #009c2d;
+    width: 100px;
+  }
+
+  .button-clean-client{
+    background-color: #fff;
+    color: #009c2d
+  }
+
+  .button-search-client{
+    background-color: #009c2d;
+    color: #fff
   }
   
   .flex{

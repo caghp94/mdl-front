@@ -14,13 +14,16 @@
         </mat-form-field>
         <mat-form-field class="full-width mb-20" style="margin: auto !important">
             <mat-label>RUC:</mat-label>
-            <input matInput autocomplete="off" formControlName="documentIdType" />
+            <input matInput autocomplete="off" formControlName="documentIdNumber" />
         </mat-form-field>
         <mat-form-field class="full-width mb-20" style="margin: auto !important">
             <mat-label>Razón Social:</mat-label>
-            <input matInput autocomplete="off" formControlName="documentIdNumber" />
+            <input matInput autocomplete="off" formControlName="documentIdName" />
         </mat-form-field>
-        <button matButton class="button-search">Buscar</button>
+        <div class="flex">
+            <button matButton class="button-search-client">Buscar</button>
+            <button matButton class="button-clean-client ml-10" (click)="resetForm()">Limpiar</button>
+        </div>
     </form>
     <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z1" *ngIf="dataSource != undefined
     && dataSource.length > 0">

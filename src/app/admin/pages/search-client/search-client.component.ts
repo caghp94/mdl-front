@@ -15,7 +15,7 @@ export class SearchClientComponent implements OnInit {
         'sei',
         'financialStatusPeriod',
         'lastUpdate'
-      ];
+    ];
     constructor(
         public dialogRef: MatDialogRef<SearchClientComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private clientsService: ClientsService) { }
@@ -39,6 +39,8 @@ export class SearchClientComponent implements OnInit {
     listApplicationUsers() {
         this.clientsService.getClients(this.form.value).subscribe((clients) => this.dataSource = clients)
     }
-    
+    resetForm() {
+        this.form.reset()
+    }
 
 }

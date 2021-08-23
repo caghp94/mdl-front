@@ -11,10 +11,10 @@ export class ClientsService {
     constructor(private http: HttpClient){}
 
     getClients(data: any): Observable<any>{
-        data.numsolicitud = Math.random();
-        data.documentIdNumber.length > 8 ? data.documentIdType = 1 : data.documentIdType = 2
-        data.documentIdType 
-        console.log(data.documentIdNumber.length)
+        // data.numsolicitud = Math.random();
+        data.numsolicitud = '12345';
+        delete data.documentIdName;
+        data.documentIdNumber.length > 8 ? data.documentIdType = "1" : data.documentIdType = "2";
         return this.http.post(`${this.baseUrl}/api/rtg`, data)
     }
 } 

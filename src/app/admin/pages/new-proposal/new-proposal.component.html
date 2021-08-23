@@ -24,9 +24,9 @@
             <mat-step>
                 <ng-template matStepLabel>Datos del cliente</ng-template>
                 <div class="bg-grey p-10 b-radius-4">
-                    <button class="button mb-10" (click)="openDialog()">
+                    <button class="button-search mb-10 flex" (click)="openDialog()">
+                        <mat-icon>search</mat-icon>
                         Buscar cliente
-                        <img height="10" src="../../assets/search-client.svg">
                     </button>
                     <form class="example-form">
                         <div class="grid">
@@ -88,16 +88,16 @@
                         </div>
                         <div class="flex-between mt-10">
                             <div class="flex-between">
-                                <div class="button">
-                                    <img height="12" src="../../assets/floppy-disk.svg">
-                                </div>
-                                <div class="button ml-10">
-                                    <img height="12" src="../../assets/printer.svg">
-                                </div>
+                                <button mat-mini-fab class="button">
+                                    <mat-icon class="material-icons md-18">save</mat-icon>
+                                </button>
+                                <button mat-mini-fab class="button ml-10">
+                                    <mat-icon class="material-icons md-18">print</mat-icon>
+                                </button>
                             </div>
                             <div class="flex-between">
-                                <button matStepperNext class="button">
-                                    <img height="10" src="../../assets/right-arrow.svg">
+                                <button mat-mini-fab matStepperNext class="button">
+                                    <mat-icon class="material-icons md-18">navigate_next</mat-icon>
                                 </button>
                             </div>
                         </div>
@@ -246,25 +246,26 @@
                         </div>
                         <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
                     </form>
-                </div>
-                <div class="flex-between mt-10">
-                    <div class="flex-between">
-                        <div class="button">
-                            <img height="12" src="../../assets/floppy-disk.svg">
+                    <div class="flex-between mt-10">
+                        <div class="flex-between">
+                            <button mat-mini-fab class="button">
+                                <mat-icon class="material-icons md-18">save</mat-icon>
+                            </button>
+                            <button mat-mini-fab class="button ml-10">
+                                <mat-icon class="material-icons md-18">print</mat-icon>
+                            </button>
                         </div>
-                        <div class="button ml-10">
-                            <img height="12" src="../../assets/printer.svg">
+                        <div class="flex-between">
+                            <button mat-mini-fab matStepperNext class="button">
+                                <mat-icon class="material-icons md-18">chevron_left</mat-icon>
+                            </button>
+                            <button mat-mini-fab matStepperNext class="button ml-10">
+                                <mat-icon class="material-icons md-18">navigate_next</mat-icon>
+                            </button>
                         </div>
                     </div>
-                    <div class="flex-between">
-                        <button matStepperPrevious class="button">
-                            <img height="10" src="../../assets/left-arrow.svg">
-                        </button>
-                        <button matStepperNext class="button ml-10">
-                            <img height="10" src="../../assets/right-arrow.svg">
-                        </button>
-                    </div>
                 </div>
+
             </mat-step>
             <mat-step>
                 <ng-template matStepLabel>Posición</ng-template>
@@ -322,25 +323,26 @@
                         </div>
                         <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
                     </form>
-                </div>
-                <div class="flex-between mt-10">
-                    <div class="flex-between">
-                        <div class="button">
-                            <img height="12" src="../../assets/floppy-disk.svg">
+                    <div class="flex-between mt-10">
+                        <div class="flex-between">
+                            <button mat-mini-fab class="button">
+                                <mat-icon class="material-icons md-18">save</mat-icon>
+                            </button>
+                            <button mat-mini-fab class="button ml-10">
+                                <mat-icon class="material-icons md-18">print</mat-icon>
+                            </button>
                         </div>
-                        <div class="button ml-10">
-                            <img height="12" src="../../assets/printer.svg">
+                        <div class="flex-between">
+                            <button mat-mini-fab matStepperNext class="button">
+                                <mat-icon class="material-icons md-18">chevron_left</mat-icon>
+                            </button>
+                            <button mat-mini-fab matStepperNext class="button ml-10">
+                                <mat-icon class="material-icons md-18">navigate_next</mat-icon>
+                            </button>
                         </div>
                     </div>
-                    <div class="flex-between">
-                        <button matStepperPrevious class="button">
-                            <img height="10" src="../../assets/left-arrow.svg">
-                        </button>
-                        <button matStepperNext class="button ml-10">
-                            <img height="10" src="../../assets/right-arrow.svg">
-                        </button>
-                    </div>
                 </div>
+
             </mat-step>
             <mat-step>
                 <ng-template matStepLabel>Garantías</ng-template>
@@ -348,7 +350,7 @@
                     <form class="example-form">
                         <h4 class="green fw-600 pl-15">Posición Interna en IBK</h4>
                         <div class="grid-position">
-                            <div class="full-width p-10 b-radius-4">
+                            <div class="full-width p-5 b-radius-4">
                                 <div class="flex-field warranty">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Garantía Existente: </pre>
@@ -385,34 +387,35 @@
                         </div>
                         <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
                     </form>
-                </div>
-                <div class="flex-between mt-10">
-                    <div class="flex-between">
-                        <div class="button">
-                            <img height="12" src="../../assets/floppy-disk.svg">
+                    <div class="flex-between mt-10">
+                        <div class="flex-between">
+                            <button mat-mini-fab class="button">
+                                <mat-icon class="material-icons md-18">save</mat-icon>
+                            </button>
+                            <button mat-mini-fab class="button ml-10">
+                                <mat-icon class="material-icons md-18">print</mat-icon>
+                            </button>
                         </div>
-                        <div class="button ml-10">
-                            <img height="12" src="../../assets/printer.svg">
+                        <div class="flex-between">
+                            <button mat-mini-fab matStepperNext class="button">
+                                <mat-icon class="material-icons md-18">chevron_left</mat-icon>
+                            </button>
+                            <button mat-mini-fab matStepperNext class="button ml-10">
+                                <mat-icon class="material-icons md-18">navigate_next</mat-icon>
+                            </button>
                         </div>
                     </div>
-                    <div class="flex-between">
-                        <button matStepperPrevious class="button">
-                            <img height="10" src="../../assets/left-arrow.svg">
-                        </button>
-                        <button matStepperNext class="button ml-10">
-                            <img height="10" src="../../assets/right-arrow.svg">
-                        </button>
-                    </div>
                 </div>
+
             </mat-step>
             <mat-step>
                 <ng-template matStepLabel>Riesgo máximo</ng-template>
-                <div class="bg-grey p-10 b-radius-4">
+                <div class="bg-grey p-5 b-radius-4">
                     <h4 class="green fw-600 pl-15">Riesgo máximo calculados por el MDL</h4>
                     <p class="mx-20">Autonomía</p>
                     <form class="example-form">
                         <div class="grid-max-risk">
-                            <div class="bg-white p-10 b-radius-4 ml-10 grid-risk">
+                            <div class="bg-white p-5 b-radius-4 ml-10 grid-risk">
                                 <h4 class="green fw-600">Balance de Cierre en USD</h4>
                                 <mat-form-field>
                                     <mat-label>RM CP:</mat-label>
@@ -423,7 +426,7 @@
                                     <input matInput autocomplete="off">
                                 </mat-form-field>
                             </div>
-                            <div class="bg-white p-10 b-radius-4 grid-risk">
+                            <div class="bg-white p-5 b-radius-4 grid-risk">
                                 <h4 class="green fw-600">Balance de Situación en USD</h4>
                                 <mat-form-field>
                                     <mat-label>RM CP:</mat-label>
@@ -438,7 +441,7 @@
                                     <input matInput autocomplete="off">
                                 </mat-form-field>
                             </div>
-                            <div class="bg-white p-10 b-radius-4 grid-risk">
+                            <div class="bg-white p-5 b-radius-4 grid-risk">
                                 <h4 class="green fw-600">Balance de Situación en USD</h4>
                                 <mat-form-field>
                                     <mat-label>RM CP:</mat-label>
@@ -452,17 +455,18 @@
                         </div>
                         <!-- <button class="btn-block" (click)="onSubmit()">INGRESAR</button> -->
                     </form>
-                </div>
-                <div class="flex-between mt-10">
-                    <div class="flex-between">
-                        <div class="button">
-                            <img height="12" src="../../assets/floppy-disk.svg">
-                        </div>
-                        <div class="button ml-10">
-                            <img height="12" src="../../assets/printer.svg">
+                    <div class="flex-between mt-10">
+                        <div class="flex-between">
+                            <button mat-mini-fab class="button">
+                                <mat-icon class="material-icons md-18">save</mat-icon>
+                            </button>
+                            <button mat-mini-fab class="button ml-10">
+                                <mat-icon class="material-icons md-18">print</mat-icon>
+                            </button>
                         </div>
                     </div>
                 </div>
+
             </mat-step>
         </mat-stepper>
     </div>
