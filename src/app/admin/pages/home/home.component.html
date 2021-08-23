@@ -1,12 +1,12 @@
 <div class="nav flex-between">
-    <img height="60" width="180" src="../../assets/interbank-logo.svg" />
+    <img height="60" width="180" src="../../assets/interbank-LOGO.svg" />
     <div class="flex">
       <div class="flex-column pr-10 m-auto">
         <div>
           Nombre
         </div>
         <div>
-          <a routerLink='/login' routerLinkActive="router-link-active">Cerrar sesión</a>
+          <a routerLink='/auth' routerLinkActive="router-link-active">Cerrar sesión</a>
         </div>
       </div>
       <div class="pr-10 m-auto">
@@ -15,9 +15,9 @@
     </div>
   </div>
 <mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav mode="side" class="sidenav bg-white">
+    <mat-sidenav #sidenav mode="side" class="sidenav bg-white" (mouseenter)="sidenav.toggle()">
         <mat-nav-list>
-            <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+            <a routerLink="./search-proposal" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>search</mat-icon>
                 <span>Búsqueda de propuestas</span>
             </a>
@@ -29,7 +29,7 @@
                 <mat-icon mat-list-icon>date_range</mat-icon>
                 <span>Propuestas pendientes</span>
             </a>
-            <a routerLink="./auth" mat-list-item>
+            <a routerLink="/auth" mat-list-item>
                 <mat-icon mat-list-icon>logout</mat-icon>
                 <span>Salir</span>
             </a>

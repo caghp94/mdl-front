@@ -12,7 +12,9 @@ export class ClientsService {
 
     getClients(data: any): Observable<any>{
         data.numsolicitud = Math.random();
-        console.log(data)
+        data.documentIdNumber.length > 8 ? data.documentIdType = 1 : data.documentIdType = 2
+        data.documentIdType 
+        console.log(data.documentIdNumber.length)
         return this.http.post(`${this.baseUrl}/api/rtg`, data)
     }
-}
+} 

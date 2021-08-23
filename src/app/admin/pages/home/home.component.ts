@@ -26,28 +26,10 @@ export class HomeComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-    (document.getElementById('search') as HTMLElement).style.display = 'none';
-    (document.getElementById('pending') as HTMLElement).style.display = 'none'
   }
   // onSubmit(){
   //   console.log('submit')
   // }
-  searchProposal() {
-    (document.getElementById('proposal') as HTMLElement).style.display = 'none';
-    (document.getElementById('search') as HTMLElement).style.display = 'block';
-    (document.getElementById('pending') as HTMLElement).style.display = 'none'
-  }
-  newProposal() {
-    (document.getElementById('proposal') as HTMLElement).style.display = 'block';
-    (document.getElementById('search') as HTMLElement).style.display = 'none';
-    (document.getElementById('pending') as HTMLElement).style.display = 'none'
-  }
-  pendingProposals(){
-    (document.getElementById('proposal') as HTMLElement).style.display = 'none';
-    (document.getElementById('search') as HTMLElement).style.display = 'none';
-    (document.getElementById('pending') as HTMLElement).style.display = 'block'
-  }
-
   nextTab(step: any){
     this.currentTab = step
   };

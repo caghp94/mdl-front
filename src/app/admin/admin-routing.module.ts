@@ -24,7 +24,7 @@ const routes: Routes = [
             },
             {
                 path: '**',
-                redirectTo: 'search-proposal'
+                redirectTo: 'new-proposal'
             }
         ]
     }
