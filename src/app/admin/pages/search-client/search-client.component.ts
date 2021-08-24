@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { ClientsService } from "../../services/clients.service";
 
@@ -16,7 +16,7 @@ export class SearchClientComponent implements OnInit {
         'financialStatusPeriod',
         'lastUpdate'
     ];
-    isDisabled: boolean = true;
+    disabled: boolean = false;
     constructor(
         public dialogRef: MatDialogRef<SearchClientComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private clientsService: ClientsService) { }
@@ -28,9 +28,18 @@ export class SearchClientComponent implements OnInit {
     // })
     form: FormGroup = this.fb.group({
         codeID: [''],
-        documentIdNumber: [],
-        documentIdName: []
-    })
+        documentIdNumber: '',
+        documentIdName: ''
+    }, { validator: this.validate })
+
+    validate(formgroup:FormGroup){
+      if(formgroup.controls["codeID"].value || formgroup.controls["documentIdNumber"].value){
+             return {validate:true};
+             }
+             else{
+             return null;
+             }
+     }
     onCancel(): void {
         this.dialogRef.close();
     }
@@ -43,13 +52,17 @@ export class SearchClientComponent implements OnInit {
     resetForm() {
         this.form.reset()
     }
-    isValid(): any{
-      if(this.form.get('codeID')?.value !== '' || this.form.get('documentIdNumber')?.value !== '' || this.form.get('documentIdName')?.value !== '' ){
-        this.isDisabled = false
-      } else{
-        this.isDisabled =  true
+    isDisabled(){
+      console.log(this.form.get('codeID'))
+      if(this.form.get('codeID') !== null){
+        this.disabled = false
       }
-
+      else this.disabled = true
     }
-
+    getRowData(list: any){
+      localStorage.setItem('codigounico', list.codigounico);
+      localStorage.setItem('razonsocial', list.razonsocial)
+      localStorage.setItem('numerodocumento', list.numerodocumento)
+      this.dialogRef.close();
+    }
 }

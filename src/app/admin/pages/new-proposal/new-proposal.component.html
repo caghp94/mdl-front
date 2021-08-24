@@ -1,6 +1,6 @@
 <div class="bg-white content-home" id="proposal">
     <h3 class="font-center">Capturar Propuesta</h3>
-    <div class="bg-grey p-10 b-radius-4">
+    <div class="bg-grey p-5 b-radius-4">
         <div>
             <div class="flex-row flex-between">
                 <div>Cod MDI: var</div>
@@ -24,22 +24,20 @@
             <mat-step>
                 <ng-template matStepLabel>Datos del cliente</ng-template>
                 <div class="bg-grey p-10 b-radius-4">
-                    <button class="button-search mb-10 flex" (click)="openDialog()">
-                        <mat-icon>search</mat-icon>
-                        Buscar cliente
+                    <button class="button-search mb-5 flex" (click)="openDialog()">
+                        <div class="button-search-content"><mat-icon class="material-icons md-18">search</mat-icon>
+                        Buscar cliente</div>
                     </button>
-                    <form class="example-form">
+                    <form class="example-form" [formGroup]="dataClientForm">
                         <div class="grid">
-                            <div class="full-width p-x-5 bg-white b-radius-4">
-                                <div class="flex">
-                                    <mat-form-field class="full-width bg-white">
-                                        <mat-label>Código Único:</mat-label>
-                                        <input matInput autocomplete="off" />
-                                    </mat-form-field>
-                                </div>
+                            <div class="full-width p-x-5 bg-white b-radius-4 pt-5">
+                                <mat-form-field class="full-width bg-white">
+                                    <mat-label>Código Único:</mat-label>
+                                    <input matInput autocomplete="off" formControlName="codigounico" />
+                                </mat-form-field>
                                 <mat-form-field class="full-width bg-white">
                                     <mat-label>R.U.C:</mat-label>
-                                    <input matInput autocomplete="off" />
+                                    <input matInput autocomplete="off" formControlName="numerodocumento"/>
                                 </mat-form-field>
                                 <br />
                                 <mat-form-field class="full-width bg-white">
@@ -52,7 +50,7 @@
                                     <input matInput autocomplete="off" />
                                 </mat-form-field>
                             </div>
-                            <div class="full-width bg-white b-radius-4">
+                            <div class="full-width bg-white b-radius-4 pt-5">
                                 <mat-form-field class="full-width bg-white">
                                     <mat-label>Nro. de propuesta:</mat-label>
                                     <input matInput autocomplete="off" />
@@ -60,7 +58,7 @@
                                 <br />
                                 <mat-form-field class="full-width bg-white">
                                     <mat-label>Razón Social:</mat-label>
-                                    <input matInput autocomplete="off" />
+                                    <input matInput autocomplete="off" formControlName="razonsocial"/>
                                 </mat-form-field>
                                 <br />
                                 <mat-form-field class="full-width bg-white">
@@ -121,7 +119,7 @@
                                         <span>var</span>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Activo Corriente: </pre>
                                     <div>
@@ -130,7 +128,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Patrimonio: </pre>
                                     <div>
@@ -139,7 +137,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Ventas Netas: </pre>
                                     <div>
@@ -148,7 +146,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">EBITDA: </pre>
                                     <div>
@@ -157,7 +155,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Capital Trabajo: </pre>
                                     <div>
@@ -166,7 +164,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Activo Total: </pre>
                                     <div>
@@ -188,7 +186,7 @@
                                         <span>var</span>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Activo Corriente: </pre>
                                     <div>
@@ -197,7 +195,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Patrimonio: </pre>
                                     <div>
@@ -206,7 +204,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Ventas Netas: </pre>
                                     <div>
@@ -215,7 +213,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">EBITDA: </pre>
                                     <div>
@@ -224,7 +222,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Capital Trabajo: </pre>
                                     <div>
@@ -233,7 +231,7 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-field">
+                                <div class="flex-field m-auto">
                                     <pre style="padding-top:8px; font: 400 14px/20px Poppins,sans-serif;"
                                         class="green">Activo Total: </pre>
                                     <div>
@@ -378,8 +376,8 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="flex-end button-execute">
-                                    <button class="button-search mb-10" (click)="calculate()">
+                                <div class="flex-end container-button-execute">
+                                    <button class="button-execute mb-10" (click)="calculate()">
                                         Ejecutar
                                     </button>
                                 </div>

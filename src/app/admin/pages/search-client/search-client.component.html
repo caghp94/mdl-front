@@ -7,7 +7,7 @@
 </div>
 
 <div mat-dialog-content>
-    <form (ngSubmit)="listApplicationUsers()" autocomplete="false" [formGroup]="form" class="flex">
+    <form (ngSubmit)="listApplicationUsers()" autocomplete="false" [formGroup]="form" class="flex mb-20 mt-10">
         <mat-form-field class="full-width mb-20" style="margin: auto !important">
             <mat-label>C.U:</mat-label>
             <input matInput autocomplete="off" formControlName="codeID" />
@@ -21,46 +21,46 @@
             <input matInput autocomplete="off" formControlName="documentIdName" />
         </mat-form-field>
         <div class="flex">
-            <button matButton class="button-search-client">Buscar</button>
-            <button matButton class="button-clean-client ml-10" (click)="resetForm()">Limpiar</button>
+            <button matButton type="submit" class="button-search-client" [disabled]="form.valid" >Buscar</button>
+            <button matButton type="reset" class="button-clean-client ml-10" (click)="form.reset">Limpiar</button>
         </div>
     </form>
     <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort class="mat-elevation-z1" *ngIf="dataSource != undefined
-    && dataSource.length > 0">
+    && dataSource.length > 0" [ngClass]="dataSource.length > 5 ? 'table-scroll' : 'table'">
         <ng-container matColumnDef="sei">
             <th class="header-doc" mat-header-cell *matHeaderCellDef mat-sort-header>
-                Giro de la empresa
+                Código único
             </th>
 
             <div class="cell-doc">
                 <td mat-cell *matCellDef="let lista; let i = index">
-                    {{ lista.sei }}
+                    {{ lista.codigounico }}
                 </td>
             </div>
         </ng-container>
         <ng-container matColumnDef="financialStatusPeriod">
             <th class="header-doc" mat-header-cell *matHeaderCellDef mat-sort-header>
-                Periodo financiero
+                Número de documento
             </th>
 
             <div class="cell-doc">
                 <td mat-cell *matCellDef="let lista; let i = index">
-                    {{ lista.financialStatusPeriod }}
+                    {{ lista.numerodocumento }}
                 </td>
             </div>
         </ng-container>
         <ng-container matColumnDef="lastUpdate">
             <th class="header-doc" mat-header-cell *matHeaderCellDef mat-sort-header>
-                Última actualización
+                Razón social
             </th>
 
             <div class="cell-doc">
                 <td mat-cell *matCellDef="let lista; let i = index">
-                    {{ lista.updateDate }}
+                    {{ lista.razonsocial }}
                 </td>
             </div>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let lista; columns: displayedColumns" class="element-row"></tr>
+        <tr mat-row *matRowDef="let lista; columns: displayedColumns" class="element-row" (click)="getRowData(lista)"></tr>
     </table>
 </div>

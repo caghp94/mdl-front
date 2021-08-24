@@ -6,6 +6,10 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class SearchProposalComponent implements OnInit {
+
     constructor(){}
-    ngOnInit(): void{}
+    ngOnInit(): void{
+
+
+    }
 }

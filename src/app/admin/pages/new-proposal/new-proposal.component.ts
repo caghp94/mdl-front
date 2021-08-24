@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { SearchClientComponent } from "../search-client/search-client.component";
 
@@ -9,8 +10,15 @@ import { SearchClientComponent } from "../search-client/search-client.component"
 })
 
 export class NewProposalComponent implements OnInit {
-    constructor(public dialog: MatDialog) { }
-    ngOnInit(): void { }
+    constructor(public dialog: MatDialog, private fb: FormBuilder) { }
+    ngOnInit(): void {
+      localStorage.clear()
+    };
+    dataClientForm: FormGroup = this.fb.group({
+      razonsocial: [localStorage.getItem('razonsocial')],
+      codigounico: [localStorage.getItem('codigounico')],
+      numerodocumento: [localStorage.getItem('numerodocumento')]
+    })
     openDialog() {
         let dialogRef = this.dialog.open(SearchClientComponent, {
             width: '1000px',
@@ -20,6 +28,6 @@ export class NewProposalComponent implements OnInit {
 
     }
     calculate(){
-    
+
     };
 }
