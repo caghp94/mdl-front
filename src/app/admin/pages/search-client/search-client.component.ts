@@ -16,6 +16,7 @@ export class SearchClientComponent implements OnInit {
         'financialStatusPeriod',
         'lastUpdate'
     ];
+    isDisabled: boolean = true;
     constructor(
         public dialogRef: MatDialogRef<SearchClientComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private clientsService: ClientsService) { }
@@ -27,8 +28,8 @@ export class SearchClientComponent implements OnInit {
     // })
     form: FormGroup = this.fb.group({
         codeID: [''],
-        documentIdType: [],
-        documentIdNumber: []
+        documentIdNumber: [],
+        documentIdName: []
     })
     onCancel(): void {
         this.dialogRef.close();
@@ -41,6 +42,14 @@ export class SearchClientComponent implements OnInit {
     }
     resetForm() {
         this.form.reset()
+    }
+    isValid(): any{
+      if(this.form.get('codeID')?.value !== '' || this.form.get('documentIdNumber')?.value !== '' || this.form.get('documentIdName')?.value !== '' ){
+        this.isDisabled = false
+      } else{
+        this.isDisabled =  true
+      }
+
     }
 
 }

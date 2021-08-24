@@ -15,7 +15,8 @@ export class ClientsService {
         // data.numsolicitud = '12345';
         // delete data.documentIdName;
         // data.documentIdNumber.length > 8 ? data.documentIdType = "1" : data.documentIdType = "2";
-        return data.codeId !== '' ? this.http.get(`${this.baseUrl}/api/cliente/filtrar?codigounico=${data.codeId}`) : data.numerodocumento !== '' ? this.http.get(`${this.baseUrl}/api/cliente/filtrar?numerodocumento=${data.documentIdNumber}`) : this.http.get(`${this.baseUrl}/api/cliente/filtrar?razonsocial=${data.documentIdName}`)
+        console.log(data.codeID)
+        return data.codeID !== null ? this.http.get(`${this.baseUrl}/api/cliente/filtrar?codigounico=${data.codeID}`) : data.numerodocumento !== null ? this.http.get(`${this.baseUrl}/api/cliente/filtrar?numerodocumento=${data.documentIdNumber}`) : this.http.get(`${this.baseUrl}/api/cliente/filtrar?razonsocial=${data.documentIdName}`)
         // return this.http.post(`${this.baseUrl}/api/rtg`, data)
     }
 }
