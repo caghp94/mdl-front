@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
+import { Subject } from "rxjs";
+import { map } from "rxjs/operators";
+import { ClientPresenter } from "../presenter/client.presenter";
 import { SearchClientComponent } from "../search-client/search-client.component";
 
 @Component({
@@ -10,14 +13,21 @@ import { SearchClientComponent } from "../search-client/search-client.component"
 })
 
 export class NewProposalComponent implements OnInit {
-    constructor(public dialog: MatDialog, private fb: FormBuilder) { }
+  userData$: Subject<any> = new Subject<any>();
+    constructor(public dialog: MatDialog, private fb: FormBuilder, public clientPresenter: ClientPresenter) { }
     ngOnInit(): void {
-      localStorage.clear()
+      localStorage.clear();
     };
     dataClientForm: FormGroup = this.fb.group({
-      razonsocial: [localStorage.getItem('razonsocial')],
-      codigounico: [localStorage.getItem('codigounico')],
-      numerodocumento: [localStorage.getItem('numerodocumento')]
+      requestNumber: [''],
+      razonsocial: [''],
+      codigounico: [''],
+      numerodocumento: [''],
+      sei: [''],
+      rating: [''],
+      dateUpdateRating: [''],
+      dateTestRating: ['']
+
     })
     openDialog() {
         let dialogRef = this.dialog.open(SearchClientComponent, {
@@ -25,9 +35,26 @@ export class NewProposalComponent implements OnInit {
             height: '90vh',
             panelClass: 'custom-modalbox'
         });
+        dialogRef.afterClosed().subscribe(result => {
+          this.dataClientForm.setValue({
+            requestNumber: result.requestNumber,
+            razonsocial: result.razonsocial,
+            codigounico: result.codeID,
+            numerodocumento: result.documentIdNumber,
+            sei: result.sei,
+            rating: result.scaleWithException,
+            dateUpdateRating: result.financialStatusPeriod,
+            dateTestRating: result.updateDate
+          })
+          console.log(result);//returns undefined
+        });
 
     }
     calculate(){
 
     };
+
+    get getClientData() {
+      return this.userData$;
+    }
 }

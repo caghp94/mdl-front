@@ -14,9 +14,16 @@ export class ClientsService {
         // data.numsolicitud = Math.random();
         // data.numsolicitud = '12345';
         // delete data.documentIdName;
-        // data.documentIdNumber.length > 8 ? data.documentIdType = "1" : data.documentIdType = "2";
+
         console.log(data.documentIdNumber)
         return data.codeID?.length > 0 ? this.http.get(`${this.baseUrl}/api/cliente/filtrar?codigounico=${data.codeID}`) : data.documentIdNumber?.length > 0 ? this.http.get(`${this.baseUrl}/api/cliente/filtrar?numerodocumento=${data.documentIdNumber}`) : this.http.get(`${this.baseUrl}/api/cliente/filtrar?razonsocial=${data.documentIdName}`)
         // return this.http.post(`${this.baseUrl}/api/rtg`, data)
+    };
+
+    getDataRating(data: any): Observable<any>{
+      // data.numsolicitud = Math.random();
+      delete data.razonsocial;
+      data.documentIdNumber.length > 8 ? data.documentIdType = "1" : data.documentIdType = "2";
+      return this.http.post(`${this.baseUrl}/api/rtg`, data)
     }
 }

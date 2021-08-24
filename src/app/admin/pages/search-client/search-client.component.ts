@@ -2,7 +2,8 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { ClientsService } from "../../services/clients.service";
-
+import { ClientPresenter } from "../presenter/client.presenter";
+import { map } from 'rxjs/operators';
 @Component({
     selector: 'app-search-client',
     templateUrl: './search-client.component.html',
@@ -17,9 +18,11 @@ export class SearchClientComponent implements OnInit {
         'lastUpdate'
     ];
     disabled: boolean = false;
+    dataClient: any;
+    serviceData: any;
     constructor(
         public dialogRef: MatDialogRef<SearchClientComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private clientsService: ClientsService) { }
+        @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private clientsService: ClientsService, public clientPresenter: ClientPresenter) { }
     ngOnInit(): void { }
     // form: FormGroup = new FormGroup({
     //     codeID: new FormControl(),
@@ -59,10 +62,37 @@ export class SearchClientComponent implements OnInit {
       }
       else this.disabled = true
     }
-    getRowData(list: any){
-      localStorage.setItem('codigounico', list.codigounico);
-      localStorage.setItem('razonsocial', list.razonsocial)
-      localStorage.setItem('numerodocumento', list.numerodocumento)
-      this.dialogRef.close();
+    async getRowData(list: any){
+      // this.clientPresenter.getUserEdit = {
+      //   'codigounico': list.codigounico,
+      //   'razonsocial': list.razonsocial,
+      //   'numerodocumento': list.numerodocumento
+      // };
+      // this.clientPresenter.userEdit$.next({
+      //   'codigounico': list.codigounico,
+      //   'razonsocial': list.razonsocial,
+      //   'numerodocumento': list.numerodocumento
+      // })
+      this.dataClient = {
+        codeID: list.codigounico,
+        razonsocial: list.razonsocial,
+        documentIdNumber: list.numerodocumento
+    }
+
+      await this.clientsService.getDataRating(this.dataClient).subscribe(res => {
+        this.dataClient = {
+          requestNumber: Math.floor(Math.random() * 100000),
+          codeID: list.codigounico,
+          razonsocial: list.razonsocial,
+          documentIdNumber: list.numerodocumento,
+          sei: res?.sei,
+          rating: res?.scaleWithException,
+          dateUpdateRating: res?.financialStatusPeriod,
+          dateTestRating: res?.updateDate
+      }
+      })
+      // console.log(this.serviceData)
+      this.dialogRef.close({event:'close', data:this.dataClient});
+      // this.dialogRef.close();
     }
 }

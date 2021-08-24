@@ -61,6 +61,6 @@
             </div>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let lista; columns: displayedColumns" class="element-row" (click)="getRowData(lista)"></tr>
+        <tr mat-row *matRowDef="let lista; columns: displayedColumns" class="element-row" (click)="getRowData(lista)" [mat-dialog-close]="dataClient"></tr>
     </table>
 </div>
