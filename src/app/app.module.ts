@@ -27,6 +27,7 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { MaterialModule } from './material/material.module';
 import { AuthModule } from './auth/auth.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
