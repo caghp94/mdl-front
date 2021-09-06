@@ -78,6 +78,11 @@ export class NewProposalComponent implements OnInit {
     totalWarranty: [''],
   });
   openDialog() {
+    this.dataClientForm.reset()
+    this.eeffAuditForm.reset()
+    this.eeffSituationForm.reset()
+    this.eeffSunatForm.reset()
+    this.warrantyForm.reset()
     let dialogRef = this.dialog.open(SearchClientComponent, {
       width: '1000px',
       height: '90vh',
@@ -85,11 +90,6 @@ export class NewProposalComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       this.clientService.getDataRating(result.data).subscribe((res) => {
-        this.dataClientForm.reset()
-        this.eeffAuditForm.reset()
-        this.eeffSituationForm.reset()
-        this.eeffSunatForm.reset()
-        this.warrantyForm.reset()
         this.codigounico= result.data.codeID;
         this.requestDate= new Date();
         this.numerodocumento= result.data.documentIdNumber;
