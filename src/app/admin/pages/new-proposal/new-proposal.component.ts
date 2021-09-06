@@ -85,6 +85,11 @@ export class NewProposalComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       this.clientService.getDataRating(result.data).subscribe((res) => {
+        this.dataClientForm.reset()
+        this.eeffAuditForm.reset()
+        this.eeffSituationForm.reset()
+        this.eeffSunatForm.reset()
+        this.warrantyForm.reset()
         this.codigounico= result.data.codeID;
         this.requestDate= new Date();
         this.numerodocumento= result.data.documentIdNumber;
@@ -96,7 +101,7 @@ export class NewProposalComponent implements OnInit {
           razonsocial: result.data.razonsocial,
           codigounico: result.data.codeID,
           numerodocumento: result.data.documentIdNumber,
-          sei: res.sei,
+          sei: res.SEI,
           rating: res.scaleWithException,
           dateUpdateRating: dateFinancialStatusPeriod[2]+'/'+dateFinancialStatusPeriod[1]+'/'+dateFinancialStatusPeriod[0],
           dateTestRating: updateDate[2]+'/'+updateDate[1]+'/'+updateDate[0],
@@ -106,6 +111,7 @@ export class NewProposalComponent implements OnInit {
         this.isData = resEF.length > 0 ? true : false;
         resEF.map((item: any) => {
           this.currencyEEFF = item.currency;
+
           item.codeTypeEEFF == 1
             ? (this.eeffAuditForm.setValue({
               currentAssets: item.currentAssets.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
@@ -161,7 +167,6 @@ export class NewProposalComponent implements OnInit {
   }
   calculate() {}
   calculateTotalWarranty(event: any){
-    console.log(event.target.value)
     this.warrantyForm.setValue({
       realizationValue: this.totalRealizationValue,
       aditionalWarranty: parseFloat(event.target.value),

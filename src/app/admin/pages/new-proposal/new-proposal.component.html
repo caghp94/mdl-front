@@ -132,7 +132,155 @@
 
             <div class="full-width bg-white p-5 b-radius-4" *ngIf="isData">
               <div class="grid-finantial-state">
-              <form class="example-form" [formGroup]="eeffSituationForm" *ngIf="dateOfEEFFSituation">
+                <form class="example-form" [formGroup]="eeffAuditForm" *ngIf="dateOfEEFFAudit">
+                  <h4 class="green fw-600 pl-15">Balance de Auditada en {{currencyEEFF}}</h4>
+                  <div
+                    class="
+                      flex-between
+                      bg-grey
+                      tag-balance
+                      p-y-5 p-x-5
+                      b-radius-4
+                    "
+                  >
+                    <div class="flex">
+                      <span class="green">Tipo de EEFF: </span>
+                      <span>{{typeOfEEFFAudit}}</span>
+                    </div>
+                    <div class="flex">
+                      <span class="green">Fecha de EEFF: </span>
+                      <span>{{dateOfEEFFAudit}}</span>
+                    </div>
+                  </div>
+                  <div class="flex-field m-auto">
+                    <pre
+                      style="
+                        padding-top: 8px;
+                        font: 400 14px/20px Poppins, sans-serif;
+                      "
+                      class="green"
+                    >
+  Activo Corriente: </pre
+                    >
+                    <div>
+                      <mat-form-field>
+                        <input
+                          matInput
+                          autocomplete="off"
+                          formControlName="currentAssets"
+                          style="text-align: right !important;"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="flex-field m-auto">
+                    <pre
+                      style="
+                        padding-top: 8px;
+                        font: 400 14px/20px Poppins, sans-serif;
+                      "
+                      class="green"
+                    >
+  Patrimonio: </pre
+                    >
+                    <div>
+                      <mat-form-field>
+                        <input
+                          matInput
+                          autocomplete="off"
+                          formControlName="heritage"
+                          style="text-align: right !important;"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="flex-field m-auto">
+                    <pre
+                      style="
+                        padding-top: 8px;
+                        font: 400 14px/20px Poppins, sans-serif;
+                      "
+                      class="green"
+                    >
+  Ventas Netas: </pre
+                    >
+                    <div>
+                      <mat-form-field>
+                        <input
+                          matInput
+                          autocomplete="off"
+                          formControlName="netProfit"
+                          style="text-align: right !important;"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="flex-field m-auto">
+                    <pre
+                      style="
+                        padding-top: 8px;
+                        font: 400 14px/20px Poppins, sans-serif;
+                      "
+                      class="green"
+                    >
+  EBITDA: </pre
+                    >
+                    <div>
+                      <mat-form-field>
+                        <input
+                          matInput
+                          autocomplete="off"
+                          formControlName="EBITDA"
+                          style="text-align: right !important;"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="flex-field m-auto">
+                    <pre
+                      style="
+                        padding-top: 8px;
+                        font: 400 14px/20px Poppins, sans-serif;
+                      "
+                      class="green"
+                    >
+  Capital Trabajo: </pre
+                    >
+                    <div>
+                      <mat-form-field>
+                        <input
+                          matInput
+                          autocomplete="off"
+                          formControlName="workingCapital"
+                          style="text-align: right !important;"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="flex-field m-auto">
+                    <pre
+                      style="
+                        padding-top: 8px;
+                        font: 400 14px/20px Poppins, sans-serif;
+                      "
+                      class="green"
+                    >
+  Activo Total: </pre
+                    >
+                    <div>
+                      <mat-form-field>
+                        <input
+                          matInput
+                          autocomplete="off"
+                          formControlName="totalActive"
+                          style="text-align: right !important;"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </form>
+
+                <form class="example-form" [formGroup]="eeffSituationForm">
                 <h4 class="green fw-600 pl-15">Balance de Situación en {{currencyEEFF}}</h4>
                 <div
                   class="
@@ -279,153 +427,7 @@ Activo Total: </pre
                   </div>
                 </div>
               </form>
-              <form class="example-form" [formGroup]="eeffAuditForm" *ngIf="dateOfEEFFAudit">
-                <h4 class="green fw-600 pl-15">Balance de Auditada en {{currencyEEFF}}</h4>
-                <div
-                  class="
-                    flex-between
-                    bg-grey
-                    tag-balance
-                    p-y-5 p-x-5
-                    b-radius-4
-                  "
-                >
-                  <div class="flex">
-                    <span class="green">Tipo de EEFF: </span>
-                    <span>{{typeOfEEFFAudit}}</span>
-                  </div>
-                  <div class="flex">
-                    <span class="green">Fecha de EEFF: </span>
-                    <span>{{dateOfEEFFAudit}}</span>
-                  </div>
-                </div>
-                <div class="flex-field m-auto">
-                  <pre
-                    style="
-                      padding-top: 8px;
-                      font: 400 14px/20px Poppins, sans-serif;
-                    "
-                    class="green"
-                  >
-Activo Corriente: </pre
-                  >
-                  <div>
-                    <mat-form-field>
-                      <input
-                        matInput
-                        autocomplete="off"
-                        formControlName="currentAssets"
-                        style="text-align: right !important;"
-                      />
-                    </mat-form-field>
-                  </div>
-                </div>
-                <div class="flex-field m-auto">
-                  <pre
-                    style="
-                      padding-top: 8px;
-                      font: 400 14px/20px Poppins, sans-serif;
-                    "
-                    class="green"
-                  >
-Patrimonio: </pre
-                  >
-                  <div>
-                    <mat-form-field>
-                      <input
-                        matInput
-                        autocomplete="off"
-                        formControlName="heritage"
-                        style="text-align: right !important;"
-                      />
-                    </mat-form-field>
-                  </div>
-                </div>
-                <div class="flex-field m-auto">
-                  <pre
-                    style="
-                      padding-top: 8px;
-                      font: 400 14px/20px Poppins, sans-serif;
-                    "
-                    class="green"
-                  >
-Ventas Netas: </pre
-                  >
-                  <div>
-                    <mat-form-field>
-                      <input
-                        matInput
-                        autocomplete="off"
-                        formControlName="netProfit"
-                        style="text-align: right !important;"
-                      />
-                    </mat-form-field>
-                  </div>
-                </div>
-                <div class="flex-field m-auto">
-                  <pre
-                    style="
-                      padding-top: 8px;
-                      font: 400 14px/20px Poppins, sans-serif;
-                    "
-                    class="green"
-                  >
-EBITDA: </pre
-                  >
-                  <div>
-                    <mat-form-field>
-                      <input
-                        matInput
-                        autocomplete="off"
-                        formControlName="EBITDA"
-                        style="text-align: right !important;"
-                      />
-                    </mat-form-field>
-                  </div>
-                </div>
-                <div class="flex-field m-auto">
-                  <pre
-                    style="
-                      padding-top: 8px;
-                      font: 400 14px/20px Poppins, sans-serif;
-                    "
-                    class="green"
-                  >
-Capital Trabajo: </pre
-                  >
-                  <div>
-                    <mat-form-field>
-                      <input
-                        matInput
-                        autocomplete="off"
-                        formControlName="workingCapital"
-                        style="text-align: right !important;"
-                      />
-                    </mat-form-field>
-                  </div>
-                </div>
-                <div class="flex-field m-auto">
-                  <pre
-                    style="
-                      padding-top: 8px;
-                      font: 400 14px/20px Poppins, sans-serif;
-                    "
-                    class="green"
-                  >
-Activo Total: </pre
-                  >
-                  <div>
-                    <mat-form-field>
-                      <input
-                        matInput
-                        autocomplete="off"
-                        formControlName="totalActive"
-                        style="text-align: right !important;"
-                      />
-                    </mat-form-field>
-                  </div>
-                </div>
-              </form>
+
               <form class="example-form" [formGroup]="eeffSunatForm" *ngIf="dateOfEEFFSunat">
                 <h4 class="green fw-600 pl-15">Balance de Sunat en {{currencyEEFF}}</h4>
                 <div
